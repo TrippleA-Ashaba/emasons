@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "emason-mkt"
+version = "0.1.0"
+description = "'An e-commerce site for emason'"
+authors = ["Albert Ashaba Aheebwa <trippleauit@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^5.0.2"
+smartmin = "^5.0.0"
+django-environ = "^0.11.2"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
