@@ -13,3 +13,4 @@ class LogoutView(LogoutView):
 
 class IndexView(LoginRequiredMixin, TemplateView):
     template_name = "index.html"
+    extra_context = {"title": "Home"}
