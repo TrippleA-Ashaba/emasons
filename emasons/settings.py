@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "smartmin",
     # Local apps
     "apps.users",
+    "apps.inventory",
 ]
 
 MIDDLEWARE = [
