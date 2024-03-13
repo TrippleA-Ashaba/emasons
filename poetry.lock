@@ -200,6 +200,64 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-auditlog"
+version = "2.3.0"
+description = "Audit log app for Django"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "django-auditlog-2.3.0.tar.gz", hash = "sha256:b9d3acebb64f3f2785157efe3f2f802e0929aafc579d85bbfb9827db4adab532"},
+    {file = "django_auditlog-2.3.0-py3-none-any.whl", hash = "sha256:7bc2c87e4aff62dec9785d1b2359a2b27148f8c286f8a52b9114fc7876c5a9f7"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
+python-dateutil = ">=2.7.0"
+
+[[package]]
+name = "django-author"
+version = "1.2.0"
+description = "Add special User ForeignKey fields which update automatically"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-author-1.2.0.tar.gz", hash = "sha256:0c45d986cfe5eb856e968e2c88b552854d3d4e0b69bbca578c6bb5aae06cbd09"},
+]
+
+[package.dependencies]
+setuptools-git = "*"
+
+[[package]]
+name = "django-browser-reload"
+version = "1.12.1"
+description = "Automatically reload your browser in development."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django-browser-reload-1.12.1.tar.gz", hash = "sha256:875b6bd01db13380522ccb4ae75871a2edeae74bb5ac92bf32eb76763d575d86"},
+    {file = "django_browser_reload-1.12.1-py3-none-any.whl", hash = "sha256:08b457f1b6599bf782d4d2ecdfb0897d6fc936ac4035060d0269c2af5ef4ef7a"},
+]
+
+[package.dependencies]
+asgiref = ">=3.6"
+Django = ">=3.2"
+
+[[package]]
+name = "django-debug-toolbar"
+version = "4.3.0"
+description = "A configurable set of panels that display various debug information about the current request/response."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django_debug_toolbar-4.3.0-py3-none-any.whl", hash = "sha256:e09b7dcb8417b743234dfc57c95a7c1d1d87a88844abd13b4c5387f807b31bf6"},
+    {file = "django_debug_toolbar-4.3.0.tar.gz", hash = "sha256:0b0dddee5ea29b9cb678593bc0d7a6d76b21d7799cb68e091a2148341a80f3c4"},
+]
+
+[package.dependencies]
+django = ">=3.2.4"
+sqlparse = ">=0.2"
+
+[[package]]
 name = "django-environ"
 version = "0.11.2"
 description = "A package that allows you to utilize 12factor inspired environment variables to configure your Django application."
@@ -214,6 +272,20 @@ files = [
 develop = ["coverage[toml] (>=5.0a4)", "furo (>=2021.8.17b43,<2021.9.dev0)", "pytest (>=4.6.11)", "sphinx (>=3.5.0)", "sphinx-notfound-page"]
 docs = ["furo (>=2021.8.17b43,<2021.9.dev0)", "sphinx (>=3.5.0)", "sphinx-notfound-page"]
 testing = ["coverage[toml] (>=5.0a4)", "pytest (>=4.6.11)"]
+
+[[package]]
+name = "django-extensions"
+version = "3.2.3"
+description = "Extensions for Django"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "django-extensions-3.2.3.tar.gz", hash = "sha256:44d27919d04e23b3f40231c4ab7af4e61ce832ef46d610cc650d53e68328410a"},
+    {file = "django_extensions-3.2.3-py3-none-any.whl", hash = "sha256:9600b7562f79a92cbf1fde6403c04fee314608fefbb595502e34383ae8203401"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
 
 [[package]]
 name = "kombu"
@@ -334,6 +406,17 @@ files = [
 ]
 
 [[package]]
+name = "setuptools-git"
+version = "1.2"
+description = "Setuptools revision control system plugin for Git"
+optional = false
+python-versions = "*"
+files = [
+    {file = "setuptools-git-1.2.tar.gz", hash = "sha256:ff64136da01aabba76ae88b050e7197918d8b2139ccbf6144e14d472b9c40445"},
+    {file = "setuptools_git-1.2-py2.py3-none-any.whl", hash = "sha256:e7764dccce7d97b4b5a330d7b966aac6f9ac026385743fd6cedad553f2494cfa"},
+]
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -437,4 +520,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "19099eadc36b02b0e7aaaccffef111c46da076ad548d48b45e8ec44f034fa057"
+content-hash = "89647eacd0718a19fa54d6c55242960f188d0399a0e96b112bf59ee9d11aa779"
