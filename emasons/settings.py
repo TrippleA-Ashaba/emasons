@@ -114,6 +114,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # ==============================================================================================
 AUTH_USER_MODEL = "users.User"
 
+LOGIN_URL = "users:login"
+
 # ==============================================================================================
 # Smartmin
 # https://smartmin.readthedocs.io/en/latest/#configuration
