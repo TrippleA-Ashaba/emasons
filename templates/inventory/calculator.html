@@ -9,6 +9,10 @@
 		<div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
 			<form class="mt-4" action="" method="post">
 				{% csrf_token %}
+				<!--  -->
+				{% if form.errors %}
+				<div class="text-red-500 my-3">{{ form.errors }}</div>
+				{% endif %}
 				<div class="flex flex-col mb-4">
 					<label for="chemical" class="text-gray-700 dark:text-gray-400">Chemical</label>
 					<select
@@ -29,7 +33,15 @@
 						id="weight"
 						class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
 						name="weight"
-						placeholder="Enter weight in kg" />
+						placeholder="Enter weight in grams" />
+				</div>
+				<div class="flex flex-col mb-4">
+					<label for="soap_bars" class="text-gray-700 dark:text-gray-400">Soap Bars</label>
+					<input
+						type="text"
+						class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+						id="soap_bars"
+						name="soap_bars" />
 				</div>
 				<button
 					type="submit"
@@ -41,39 +53,30 @@
 		<!--  -->
 		<h2 class="text-2xl mb-4 font-semibold text-gray-700 dark:text-gray-200">Results</h2>
 		<div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-			<div class="text-xl mb-8 text-center">{{chemical}} at {{weight}}</div>
+			{% if chemical and weight %}
+			<div class="text-xl mb-8 text-center font-semibold dark:text-gray-300">
+				Chemical: <span class="text-base mr-5">{{chemical|title}} at {{weight}}g</span> <br />
+				Soap Bars :
+				<span class="text-base">{{results.soap_bars}}</span>
+			</div>
+			{% endif %}
+			<!--  -->
+			{% if soap_bars %}
+			<div class="text-xl mb-8 text-center font-semibold dark:text-gray-300">
+				Soap Bars :
+				<span class="text-base">{{results.soap_bars}}</span>
+			</div>
+			{% endif %}
 			<div class="flex flex-col">
-				<div class="flex gap-6 mb-4 flex-wrap justify-between">
+				<div class="flex gap-6 mb-4 flex-wrap">
+					{% for chemical, weight in results.weights.items %}
 					<div class="card">
 						<div class="card-body">
-							<h2 class="text-sm font-semibold text-gray-700 dark:text-gray-200">Kaolin</h2>
-							<p class="text-gray-700 dark:text-gray-400">Weight: 10kg</p>
+							<h2 class="text-sm font-semibold text-gray-700 dark:text-gray-200">{{ chemical }}</h2>
+							<p class="text-gray-700 dark:text-gray-400">Weight: {{ weight|floatformat:"3g" }}g</p>
 						</div>
 					</div>
-					<div class="card">
-						<div class="card-body">
-							<h2 class="text-sm font-semibold text-gray-700 dark:text-gray-200">Palm Sterling</h2>
-							<p class="text-gray-700 dark:text-gray-400">Weight: 10kg</p>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-body">
-							<h2 class="text-sm font-semibold text-gray-700 dark:text-gray-200">Palm Kernel</h2>
-							<p class="text-gray-700 dark:text-gray-400">Weight: 10kg</p>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-body">
-							<h2 class="text-sm font-semibold text-gray-700 dark:text-gray-200">Caustic Soda</h2>
-							<p class="text-gray-700 dark:text-gray-400">Weight: 10kg</p>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-body">
-							<h2 class="text-sm font-semibold text-gray-700 dark:text-gray-200">Sodium Silicate</h2>
-							<p class="text-gray-700 dark:text-gray-400">Weight: 10kg</p>
-						</div>
-					</div>
+					{% endfor %}
 				</div>
 			</div>
 		</div>

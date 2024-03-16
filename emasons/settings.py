@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+import environ
+from dotenv import load_dotenv
+
+load_dotenv()
+
+env = environ.Env()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,12 +27,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-hge0cr9f)^b!32t7c10rxx2ymyh*sze++0@hb-9y3u!(x@4nko"
+SECRET_KEY = env.str("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # ==============================================================================================
 # Application definition
@@ -186,3 +193,18 @@ if DEBUG:
     INTERNAL_IPS = [
         "127.0.0.1",
     ]
+
+# ==============================================================================================
+# Chemical Weight Settings
+# ==============================================================================================
+CHEMICAL_WEIGHTS = env.dict(
+    "CHEMICAL_WEIGHTS",
+    default={
+        "caustic_soda": 9_450 / 100,
+        "palm_sterling": 44_200 / 100,
+        "palm_kernel": 20_800 / 100,
+        "sodium_silicate": 7_500 / 100,
+        "kaolin": 1_950 / 100,
+        "water": 22_450 / 100,
+    },
+)
