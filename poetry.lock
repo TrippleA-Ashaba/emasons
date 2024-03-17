@@ -496,6 +496,16 @@ files = [
 ]
 
 [[package]]
+name = "wfastcgi"
+version = "3.0.0"
+description = "An IIS-Python bridge based on WSGI and FastCGI."
+optional = false
+python-versions = "*"
+files = [
+    {file = "wfastcgi-3.0.0.tar.gz", hash = "sha256:cbce266e7da411d40f98f28a73cb9a55157b274398bd5a8d2b25cfa10a4dd493"},
+]
+
+[[package]]
 name = "xlrd"
 version = "1.2.0"
 description = "Library for developers to extract data from Microsoft Excel (tm) spreadsheet files"
@@ -520,4 +530,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "89647eacd0718a19fa54d6c55242960f188d0399a0e96b112bf59ee9d11aa779"
+content-hash = "2d013e9163f92a547b45d0fedfb9e376f044c544a863ff8a830cf36341d8acb5"
