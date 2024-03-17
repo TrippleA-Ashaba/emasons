@@ -16,6 +16,7 @@ django-extensions = "^3.2.3"
 django-auditlog = "^2.3.0"
 django-browser-reload = "^1.12.1"
 django-debug-toolbar = "^4.3.0"
+wfastcgi = "^3.0.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.2.2"
